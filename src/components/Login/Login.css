@@ -1,0 +1,46 @@
+.login-input{
+   display: flex; 
+   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+  
+} 
+.login {
+    background-color: white;
+}
+/* 
+.login-input {
+    display: flex; 
+    flex-direction: column;
+} */
+
+.login-input > input {
+    margin: 5px;
+    padding: 5px;
+    
+}
+
+.login-input > button{
+  border-radius: 8px;
+  width: 80px;
+}
+
+.google-signIn {
+    display: flex; 
+    justify-content: center;
+    margin-top: 10px; 
+}
+
+.google-signIn > button {
+    border-radius: 8px;
+    background-color: rgb(8, 147, 202);
+    color: white;
+    padding: 5px;
+    border-color: transparent;
+}
+
+.google-signIn > button:hover {
+    background-color: rgb(4, 91, 126);
+    cursor: pointer;
+}
