@@ -7,7 +7,7 @@ import './Fees.css';
 const Feed = () => {
 
     const [posts, setPosts] = useState([]);
-   console.log(posts)
+//    console.log(posts)
     useEffect(()=>{
       db.collection('questions').orderBy('timestamp', 'desc')
       .onSnapshot(snapshot => setPosts(snapshot.docs.map((doc) =>(({
@@ -26,7 +26,7 @@ const Feed = () => {
                     // console.log(question.user,question.question)
                      <Post
                     key= {id}
-                    id={id} 
+                    Id={id} 
                     image= {question.imageUrl}
                      question= {question.question}
                      timestamp= {question.timestamp}
