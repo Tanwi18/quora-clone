@@ -26,7 +26,7 @@ const Feed = () => {
                     // console.log(question.user,question.question)
                      <Post
                     key= {id}
-                    id={id} 
+                    Id={id} 
                     image= {question.imageUrl}
                      question= {question.question}
                      timestamp= {question.timestamp}

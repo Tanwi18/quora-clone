@@ -72,7 +72,7 @@ const Navbar = () => {
     return (
         <div className="qHeader">
             <div className="qHeader-logo">
-
+               <img src="https://as2.ftcdn.net/v2/jpg/02/94/33/03/500_F_294330359_ll2Q6r2Ov0EitHquCV5XUDVZjT9RIyyu.jpg" alt="" />
             </div>
             <div className="qHeader-icons">
                 <div className="qHeader-icon">

@@ -1,10 +1,10 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyAUXHGQHP2CdS_9v2cC6d47hlAXh5cRzK0",
-    authDomain: "quora-clone-895fd.firebaseapp.com",
-    projectId: "quora-clone-895fd",
-    storageBucket: "quora-clone-895fd.appspot.com",
-    messagingSenderId: "430317970046",
-    appId: "1:430317970046:web:8c80cc1548a6198f902e2f"
-  };
+  apiKey: "AIzaSyAhKslS8cgPQO-O_zME5S6biNl5yg0UjIE",
+  authDomain: "qanda-ff8c2.firebaseapp.com",
+  projectId: "qanda-ff8c2",
+  storageBucket: "qanda-ff8c2.appspot.com",
+  messagingSenderId: "29265702323",
+  appId: "1:29265702323:web:7b8837cbf3aee4f4d0efc6"
+};
 
   export default firebaseConfig;

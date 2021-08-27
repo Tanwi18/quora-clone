@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import logo from './logo.svg';
 // import { Counter } from './features/counter/Counter';
 import './App.css';
 import Quora from './components/Quora/Quora';
@@ -7,6 +6,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { login, logout, selectUser } from './features/userSlice';
 import Login from './components/Login/Login';
 import { auth } from './components/firebase/firebase';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 function App() {
 const user = useSelector(selectUser);
@@ -33,7 +38,13 @@ useEffect(()=>{
      {
       user ? (<Quora></Quora>) :(<Login></Login>)
      }
-      
+      <Router>
+        <Switch>
+          <Route path ='/admin'>
+              <Quora></Quora>
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
