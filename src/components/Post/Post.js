@@ -289,7 +289,7 @@ const Post = ({ Id, question, image, timestamp, quoraUser }) => {
                     }
                 ))))
         }
-    }, [])
+    }, [questionId])
     console.log(getAnswer)
    
     return (
