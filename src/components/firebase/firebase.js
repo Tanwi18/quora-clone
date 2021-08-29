@@ -4,19 +4,12 @@ import "firebase/auth";
 // import "firebase/firestore";
 import firebaseConfig from './firebaseConfig';
 
-// const firebaseApp= firebase.initializeApp(firebaseConfig);
+const firebaseApp= firebase.initializeApp(firebaseConfig);
+const auth=firebase.auth();
 
-if (!firebase.apps.length) {
-    firebase.initializeApp(firebaseConfig)
-  }
+const provider = new firebase.auth.GoogleAuthProvider();
 
-// const auth=firebase.auth();
+const db= firebaseApp.firestore();
 
-// const provider = new firebase.auth.GoogleAuthProvider();
-
-// const db= firebaseApp.firestore();
-
-// export {auth};
-// export default db;
-export const auth = firebase.auth() 
-export const googleAuthProvider = new firebase.auth.GoogleAuthProvider()
+export {auth,provider};
+export default db;

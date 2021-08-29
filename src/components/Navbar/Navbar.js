@@ -17,6 +17,7 @@ import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import db from '../firebase/firebase';
 import firebase from 'firebase';
+import auth from '../firebase/firebase';
 
 const customStyles = {
     overlay: {
@@ -115,7 +116,9 @@ const Navbar = () => {
                         <h5>Share Link</h5>
                     </div>
                     <div className="modal-info">
-                        <Avatar className="avatar" 
+                        <Avatar
+                         onClick={() => auth.signOut()}
+                        className="avatar" 
                             src={user.photo}>
                         </Avatar>
                         <p>{user.displayName ? user.displayName : user.email} asked</p>

@@ -1,13 +1,8 @@
 import React, { useState } from 'react';
 import './Login.css';
 // import { FcGoogle } from "react-icons/fc";
-import { auth } from '../../components/firebase/firebase';
+import { auth, provider } from '../../components/firebase/firebase';
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
-import { GoogleAuthProvider } from "firebase/auth";
-// import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-
-
-const provider = new GoogleAuthProvider();
 
 
 const Login = () => {
@@ -22,52 +17,30 @@ const Login = () => {
     });
   };
 
-  // const handleGoogleSignIn = () =>{
-  //   const auth = getAuth();
-  //   signInWithPopup(auth, provider)
-  //     .then((result) => {
-  //       // This gives you a Google Access Token. You can use it to access the Google API.
-  //       const credential = GoogleAuthProvider.credentialFromResult(result);
-  //       const token = credential.accessToken;
-  //       // The signed-in user info.
-  //       const user = result.user;
-  //       // ...
-  //     }).catch((error) => {
-  //       // Handle Errors here.
-  //       const errorCode = error.code;
-  //       const errorMessage = error.message;
-  //       // The email of the user's account used.
-  //       const email = error.email;
-  //       // The AuthCredential type that was used.
-  //       const credential = GoogleAuthProvider.credentialFromError(error);
-  //       // ...
-  //     });
-  // }
-
   const handleSignIn = (e) => {
     e.preventDefault();
 
-  //   auth
-  //     .signInWithEmailAndPassword(email, password)
-  //     .then((auth) => {
-  //       console.log(auth);
-  //     })
-  //     .catch((e) => alert(e.message));
-  // };
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((auth) => {
+        console.log(auth);
+      })
+      .catch((e) => alert(e.message));
+  };
 
-  // const registerSignIn = (e) => {
-  //   e.preventDefault();
+  const registerSignIn = (e) => {
+    e.preventDefault();
 
-  //   auth
-  //     .createUserWithEmailAndPassword(email, password)
-  //     .then((auth) => {
-  //       if (auth) {
-  //         console.log(auth);
-  //       }
-  //     })
-  //     .catch((e) => alert(e.message));
-  // };
-  }
+    auth
+      .createUserWithEmailAndPassword(email, password)
+      .then((auth) => {
+        if (auth) {
+          console.log(auth);
+        }
+      })
+      .catch((e) => alert(e.message));
+  };
+      
 
 return (
   <div className="login">
@@ -145,9 +118,9 @@ return (
           </div>
           <div className="login__forgButt">
             <small>Forgot Password?</small>
-            <button >Login</button>
+            <button onClick={handleSignIn}>Login</button>
           </div>
-          <button >Register</button>
+          <button onClick={registerSignIn}>Register</button>
         </div>
       </div>
       <div className="login__lang">
@@ -167,7 +140,7 @@ return (
     </div>
   </div>
 );
-  }
+}
 
 
 export default Login;
